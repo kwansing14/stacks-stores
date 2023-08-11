@@ -1,18 +1,12 @@
 import prisma from '@/lib/prisma';
+import FormPosts from '@/app/FormPosts';
 
 export default async function Home() {
-  const post = await prisma.post.findMany();
-  console.log(post);
+  const posts = await prisma.post.findMany();
   return (
-    <main className='flex text-sm flex-col items-center'>
-      <div>To do list - Next server action prisma</div>
-      <div>
-        {post.map((item) => (
-          <div key={item.id}>
-            <div>{item.text}</div>
-          </div>
-        ))}
-      </div>
+    <main className='flex text-sm flex-col items-center mt-24'>
+      <h1 className='text-lg'>To do list - Next server action prisma</h1>
+      <FormPosts posts={posts} />
     </main>
   );
 }
