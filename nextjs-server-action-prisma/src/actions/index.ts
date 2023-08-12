@@ -5,6 +5,7 @@ import { revalidatePath } from 'next/cache';
 
 const addPost = async (formData: FormData, path: string) => {
   const content = formData.get('content');
+  // test loading
   await new Promise((r) => setTimeout(r, 1000));
   try {
     await prisma.post.create({
@@ -18,4 +19,19 @@ const addPost = async (formData: FormData, path: string) => {
   revalidatePath(path);
 };
 
-export { addPost };
+const deletePost = async (id: number, path: string) => {
+  // test loading
+  await new Promise((r) => setTimeout(r, 1000));
+  try {
+    await prisma.post.delete({
+      where: {
+        id,
+      },
+    });
+  } catch (e) {
+    console.error(e);
+  }
+  revalidatePath(path);
+};
+
+export { addPost, deletePost };
