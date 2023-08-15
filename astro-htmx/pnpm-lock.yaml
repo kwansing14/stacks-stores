@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -23,8 +23,8 @@ dependencies:
 
 devDependencies:
   pnpm:
-    specifier: 8.6.12
-    version: 8.6.12
+    specifier: 8.5.1
+    version: 8.5.1
   prettier:
     specifier: ^3.0.1
     version: 3.0.1
@@ -3027,8 +3027,8 @@ packages:
       find-up: 4.1.0
     dev: false
 
-  /pnpm@8.6.12:
-    resolution: {integrity: sha512-Eza4C5SO/Xl5IYozupbZ5NOA5leBRPYxmXmXfe7G4/4uCkRLhks84rB33aitxNZU/uMrnDGGjwrLktoKvPjqHA==}
+  /pnpm@8.5.1:
+    resolution: {integrity: sha512-W6elL7Nww0a/MCICkzpkbxW6f99TQuX4DuJoDjWp39X08PKDkEpg4cgj3d6EtgYADcdQWl/eM8NdlLJVE3RgpA==}
     engines: {node: '>=16.14'}
     hasBin: true
     dev: true
