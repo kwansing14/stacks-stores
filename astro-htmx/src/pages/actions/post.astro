@@ -3,11 +3,23 @@ const formData = await Astro.request.formData();
 const task = formData.get('task')?.toString();
 ---
 
-<ul class='list-disc flex gap-4 items-center'>
-  <li>{task}</li>
-  <button
-    class='text-red-500'
-    hx-delete='/actions/delete'
-    hx-target='closest ul'>delete</button
-  >
+<ul class='list-disc'>
+  <li class='task flex gap-4'>
+    {task}
+    <button
+      class='text-green-500'
+      hx-get='/actions/edit'
+      hx-target='closest ul'
+      hx-include='closest li'
+    >
+      edit
+    </button>
+    <button
+      class='text-red-500'
+      hx-delete='/actions/delete'
+      hx-target='closest ul'
+    >
+      delete
+    </button>
+  </li>
 </ul>

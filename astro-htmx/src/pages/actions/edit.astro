@@ -1,0 +1,15 @@
+---
+const header = await Astro.request.headers;
+console.log('header', header);
+const res = header.get('cookie');
+---
+
+<li class='task flex gap-4'>
+  <form hx-put='/actions/post' hx-target='closest li' hx-swap='outerHTML'>
+    <input
+      name='editedtask'
+      class='w-20 outline-none border-neutral-300 border px-2 bg-transparent'
+    />
+    <button type='submit' class='text-green-500'>confirm</button>
+  </form>
+</li>
