@@ -1,16 +1,14 @@
 ---
 const formData = await Astro.request.formData();
 const editedtask = formData.get('editedtask')?.toString();
-console.log(editedtask);
 ---
 
-<li class='task flex gap-4'>
+<li>
   {editedtask}
-  <span>why cant i see this</span>
   <button
     class='text-green-500'
     hx-get='/actions/edit'
-    hx-target='closest ul'
+    hx-target='closest li'
     hx-include='closest li'
   >
     edit
@@ -18,7 +16,8 @@ console.log(editedtask);
   <button
     class='text-red-500'
     hx-delete='/actions/delete'
-    hx-target='closest ul'
+    hx-target='closest li'
+    hx-swap='outerHTML'
   >
     delete
   </button>
