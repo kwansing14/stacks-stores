@@ -1,0 +1,20 @@
+---
+const response = await Astro.request.formData();
+const task = response.get('task');
+---
+
+<form
+  hx-post='/actions/post'
+  hx-target='closest li'
+  hx-swap='outerHTML'
+  class='flex'
+>
+  <input
+    value={task?.toString()}
+    name='task'
+    autofocus
+    onfocus=`this.select()`
+    class='outline-none border-neutral-300 border px-2 bg-transparent w-full'
+  />
+  <button type='submit' class='text-green-500'>confirm</button>
+</form>

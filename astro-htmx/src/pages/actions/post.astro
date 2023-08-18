@@ -3,11 +3,26 @@ const formData = await Astro.request.formData();
 const task = formData.get('task')?.toString();
 ---
 
-<ul class='list-disc flex gap-4 items-center'>
-  <li>{task}</li>
-  <button
-    class='text-red-500'
-    hx-delete='/actions/delete'
-    hx-target='closest ul'>delete</button
-  >
-</ul>
+<li>
+  <form>
+    {task}
+    <input type='hidden' name='task' value={task} />
+    <button
+      class='text-green-500'
+      hx-trigger='click'
+      hx-post='/actions/edit'
+      hx-target='closest li'
+      hx-include='[name=task]'
+    >
+      edit
+    </button>
+    <button
+      class='text-red-500'
+      hx-delete='/actions/delete'
+      hx-target='closest li'
+      hx-swap='outerHTML'
+    >
+      delete
+    </button>
+  </form>
+</li>
