@@ -10,7 +10,7 @@
     <meta name='generator' content={Astro.generator} />
     <title>Astro</title>
     <script src='htmx.js' is:inline></script>
-    <script src='https://unpkg.com/hyperscript.org@0.9.11'></script>
+    <!-- <script src='https://unpkg.com/hyperscript.org@0.9.11'></script> -->
   </head>
   <body
     class='flex flex-col items-center mt-24 bg-neutral-900 text-sm text-neutral-50'
@@ -21,7 +21,6 @@
       hx-put='/actions/post'
       hx-swap='afterbegin'
       hx-target='#lists'
-      hx-include='#inputTask'
       hx-on::after-request='this.querySelector("input[name=task]").value=""'
       class='mt-4 flex flex-col'
     >
