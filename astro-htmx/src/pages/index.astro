@@ -15,6 +15,14 @@
   <body
     class='flex flex-col items-center mt-24 bg-neutral-900 text-sm text-neutral-50'
   >
+    <div
+      class='flex gap-4'
+      hx-post='/time'
+      hx-trigger='every 1s'
+      hx-target='#displayTime'
+    >
+      Clock: <span id='displayTime'></span>
+    </div>
     <h1>To Do List astro htmx</h1>
     <form
       id='inputform'
