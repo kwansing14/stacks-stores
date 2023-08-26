@@ -1,14 +1,29 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import db, { schema } from '@/db/client';
+import Button from '@/components/DeleteBtn';
 
 const users1 = await db.query.users.findMany();
 const users2 = await db.select().from(schema.users);
 
 console.log('1', users1);
 console.log('2', users2);
+
+const handleClick = () => {
+  console.log('click');
+};
 ---
 
 <Layout title='Welcome to Astro.'>
   <main class='border'>main here</main>
+  <div>
+    {
+      users1.map((user) => (
+        <div>
+          {user.name}
+          <Button id={user.id} />
+        </div>
+      ))
+    }
+  </div>
 </Layout>

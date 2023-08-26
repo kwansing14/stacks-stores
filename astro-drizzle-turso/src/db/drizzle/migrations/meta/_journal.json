@@ -8,6 +8,20 @@
       "when": 1693027646309,
       "tag": "0000_common_rafael_vega",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1693057627819,
+      "tag": "0001_clever_vargas",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1693069922431,
+      "tag": "0002_watery_paibok",
+      "breakpoints": true
     }
   ]
 }
