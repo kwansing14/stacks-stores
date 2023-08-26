@@ -1,7 +1,12 @@
-import { pgTable, serial, text, varchar } from 'drizzle-orm/pg-core';
+import { index, sqliteTable, integer, text } from 'drizzle-orm/sqlite-core';
 
-export const users = pgTable('users', {
-  id: serial('id').primaryKey(),
-  fullName: text('full_name'),
-  phone: varchar('phone', { length: 256 }),
-});
+export const users = sqliteTable(
+  'users',
+  {
+    id: integer('id'),
+    name: text('name').notNull(),
+  },
+  (table) => ({
+    idx1: index('name_index').on(table.name),
+  })
+);
