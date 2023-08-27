@@ -1,3 +1,3 @@
 ASTRO-HTMX because why not? lmao
 
-Deployed: [astro-htmx.pages.dev](astro-htmx.pages.dev)
+Deployed: [https://astro-htmx.pages.dev/](https://astro-htmx.pages.dev/)
