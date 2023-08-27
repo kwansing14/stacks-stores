@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+import db, { schema } from '@/db/client';
+import DeleteBtn from '@/components/DeleteBtn';
+import CreateBtn from '@/components/GetBtn';
+import PostBtn from '@/components/PostBtn';
+import AllBtn from '@/components/AllBtn';
+import AddUser from '@/components/AddUser';
+import RemoveUser from '@/components/RemoveUser';
+
+// const users1 = await db.query.users.findMany();
+const users2 = await db.select().from(schema.users);
+
+// console.log('1', users1);
+// console.log('2', users2);
+---
+
+<Layout title='Welcome to Astro.'>
+  <main class='border'>main here</main>
+  <div class='flex items-center flex-col'>
+    <div>Testing Buttons (check console log for result)</div>
+    <div class='flex gap-2'>
+      <CreateBtn client:load />
+      <PostBtn client:load />
+      <DeleteBtn client:load />
+      <AllBtn client:load />
+    </div>
+    <div class='mt-8'>
+      {
+        users2.map((user) => (
+          <div class='flex gap-4'>
+            {user.name} <RemoveUser id={user.id} client:load />
+          </div>
+        ))
+      }
+      <AddUser client:load />
+    </div>
+  </div>
+</Layout>
