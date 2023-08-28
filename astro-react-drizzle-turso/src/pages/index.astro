@@ -2,7 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import db, { schema } from '@/db/client';
 import DeleteBtn from '@/components/DeleteBtn';
-import CreateBtn from '@/components/GetBtn';
+import GetBtn from '@/components/GetBtn';
+import GetBtn2 from '@/components/GetBtn2';
 import PostBtn from '@/components/PostBtn';
 import AllBtn from '@/components/AllBtn';
 import AddUser from '@/components/AddUser';
@@ -20,7 +21,8 @@ const users2 = await db.select().from(schema.users);
   <div class='flex items-center flex-col'>
     <div>Testing Buttons (check console log for result)</div>
     <div class='flex gap-2'>
-      <CreateBtn client:load />
+      <GetBtn client:load />
+      <GetBtn2 client:load />
       <PostBtn client:load />
       <DeleteBtn client:load />
       <AllBtn client:load />
