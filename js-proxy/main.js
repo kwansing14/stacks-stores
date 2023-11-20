@@ -10,8 +10,6 @@ const legacyFontSizes = {
 };
 
 const fontSizes = {
-  extraLarge: 'gigantic', // deprecated
-  extraSmall: 'tiny', // deprecated
   gigantic: 'gigantic',
   large: 'large',
   medium: 'medium',
