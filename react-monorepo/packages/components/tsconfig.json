@@ -50,14 +50,17 @@
 
     /* Whats this */
     "declarationMap": true,
+    "declarationDir": "types",
     "allowSyntheticDefaultImports": true,
+
+    /* Error fixing for roll up*/
 
     /* Paths */
     "baseUrl": ".",
     "paths": {
-      "components": ["src/components/index.ts"]
+      "components": ["src/index.ts"]
     },
-    "typeRoots": ["node_modules/@types", "src/components/index.d.ts"]
+    "typeRoots": ["node_modules/@types", "src/index.d.ts"]
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

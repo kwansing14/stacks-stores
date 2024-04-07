@@ -17,12 +17,12 @@ export default defineConfig((configEnv) => ({
     react(),
     tsConfigPaths(),
     dts({
-      include: ["src/components/"],
+      include: ["src/"],
     }),
   ],
   build: {
     lib: {
-      entry: resolve("src", "components/index.ts"),
+      entry: resolve("src/index.ts"),
       name: "Components",
       formats: ["es", "umd"],
       fileName: (format) => `components.${format}.js`,
