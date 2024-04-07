@@ -1,5 +1,5 @@
 {
-  "name": "@npm-workspace/app2",
+  "name": "components",
   "private": true,
   "version": "0.0.0",
   "type": "module",
