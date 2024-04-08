@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "common": "pnpm --filter common",
-    "apps": "pnpm --filter apps"
+    "app1": "pnpm --filter app1"
   },
   "workspaces": [
     "./packages/*",
