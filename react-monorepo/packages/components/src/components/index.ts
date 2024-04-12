@@ -1,2 +1,3 @@
-export { Header } from './Header'
-export { type HeaderText } from './Header'
+export { Header } from "./Header";
+export { type HeaderText } from "./Header";
+

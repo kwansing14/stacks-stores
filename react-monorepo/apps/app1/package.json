@@ -12,8 +12,8 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "common": "workspace:packages",
-    "components": "workspace:components"
+    "common": "workspace:*",
+    "components": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
