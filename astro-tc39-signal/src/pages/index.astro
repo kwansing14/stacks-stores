@@ -1,0 +1,13 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ReactCart from '../react-components/cart'
+import Discounter from '../svelte-components/discounter.svelte'
+---
+
+<Layout title="Welcome to Astro.">
+	<main class='w-96 m-12'>
+    <ReactCart client:load />
+    <Discounter client:load />
+	</main>
+</Layout>
+
