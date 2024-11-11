@@ -1,27 +1,20 @@
 "use client";
 
-import { useEffect } from "react";
-import { client } from "@/lib/hono";
+import { useGetTestApi } from "@/queryHooks/useGetQuery";
+import { usePostTestApi } from "@/queryHooks/usePostQuery";
 
 export default function Home() {
-  const postClick = async () => {
-    const res = await client.postTest.$post({ json: { message: "hono" } });
-    console.log(await res.json());
-  };
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await client.getTest.hello.$get();
-      const data = await res.json();
-      console.log(data.message);
-    };
-    fetchData();
-  }, []);
+  const { data, isLoading } = useGetTestApi();
+  const { mutate, data: postData } = usePostTestApi();
 
   return (
     <div>
-      new next lucia
-      <button onClick={postClick}>simple post</button>
+      {isLoading && <div>loading....</div>}
+      {!isLoading && <div>{data?.message}</div>}
+      <button onClick={() => mutate({ message: "test123123" })}>
+        simple post
+      </button>
+      {postData && <div>{postData.message}</div>}
     </div>
   );
 }
