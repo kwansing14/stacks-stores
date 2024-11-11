@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json.schemastore.org/prettierrc",
+  "plugins": ["@ianvs/prettier-plugin-sort-imports", "prettier-plugin-tailwindcss", "prettier-plugin-packagejson"],
+  "arrowParens": "always",
+  "singleQuote": true,
+  "semi": true,
+  "tabWidth": 2,
+  "quoteProsp": "as-needed",
+  "bracketSpacing": true,
+  "bracketSameLine": false,
+  "printWidth": 120,
+  "importOrder": [
+    "^(react/(.*)$)|^(react$)",
+    "^(next/(.*)$)|^(next$)",
+    "<THIRD_PARTY_MODULES>",
+    "",
+    "^@/(.*)$",
+    "",
+    "^[./]"
+  ]
+}
