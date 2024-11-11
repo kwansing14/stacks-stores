@@ -5,7 +5,7 @@ import { usePostTestApi } from "@/queryHooks/usePostQuery";
 
 export default function Home() {
   const { data, isLoading } = useGetTestApi();
-  const { mutate, data: postData } = usePostTestApi();
+  const { mutate, data: postData, isPending: isPostLoading } = usePostTestApi();
 
   return (
     <div>
@@ -14,7 +14,8 @@ export default function Home() {
       <button onClick={() => mutate({ message: "test123123" })}>
         simple post
       </button>
-      {postData && <div>{postData.message}</div>}
+      {isPostLoading && <div>loading....</div>}
+      <div>{postData?.message}</div>
     </div>
   );
 }
